@@ -11,98 +11,77 @@ public sealed class SortedSquaresTests
             new object[]
             {
                 new [] {1,2,3},
-                0,
                 new [] {1,4,9}
             },
             new object[]
             {
                 new [] {-3, -2, -1},
-                -1,
                 new [] {1,4,9}
             },
             new object[]
             {
                 new object[] {-5, -1, -1, 1, 1, 6, 12, 20},
-                3,
                 new object[] {1, 1, 1, 1, 25, 36, 144, 400},
             },
             new object[]
             {
                 new object[]{-3, -2, -1, 0, 1, 2, 3},
-                3,
                 new object[]{0, 1, 1, 4, 4, 9, 9}
             },
             new object[]
             {
                 new object[]{-1, 1, 2, 3, 4},
-                1,
                 new object[]{1, 1, 4, 9, 16}
             },
             new object[]
             {
                 new object[]{-7, -5, -3, -2, -1, 3},
-                5,
                 new object[]{1, 4, 9, 9,25,49}
             },
             new object[]
             {
                 new object[]{-7, -5, -3, -2, 1, 3},
-                4,
                 new object[]{1, 4, 9,9,25,49}
             },
             new object[]
             {
                 new object[]{-3, -2, 1, 3, 5, 6},
-                2,
                 new object[]{1,4,9,9,25,36}
             },
             new object[]
             {
                 new object[]{-7, 2, 3, 4, 5, 5},
-                1,
                 new object[]{4,9,16,25,25,49}
             },
             new object[]
             {
                 new object[]{-7, -5, -3, -2, 3},
-                4,
                 new object[]{4,9,9,25,49}
             },
             new object[]
             {
                 new object[]{-3, -2, 1, 3, 5},
-                2,
                 new object[]{1,4,9,9,25}
             },
             new object[]
             {
                 new object[]{-7, 2, 3, 5, 5},
-                1,
                 new object[]{4,9,25,25,49}
             },
             new object[]
             {
                 new object[]{-7, 0, 2, 3, 5, 5},
-                1,
                 new object[]{0,4,9,25,25,49}
             },
             new object[]
             {
                 new object[]{0, 1, 1, 6, 12, 20},
-                0,
                 new object[]{0, 1, 1, 36, 144, 400}
             }
         };
-    
-    [Theory, MemberData(nameof(TestData))]
-    public void GetIndexOfTheSmallestNotNegative_CorrectData_ShouldReturnIndex(int[] source, int index, int[] sorted)
-    {
-        var result = SortedSquares.GetIndexOfTheSmallestNotNegative(source);
-        Assert.Equal(index, result);
-    }
 
     [Theory, MemberData(nameof(TestData))]
-    public void GetSortedSquares_CorrectData_ShouldReturnSortedList(int[] source, int index, int[] sorted)
+    public void GetSortedSquares_CorrectData_ShouldReturnSortedList(int[] source, int[] sorted)
     {
         var result = SortedSquares.GetSortedSquares(source);
         Assert.Equal(sorted, result);
