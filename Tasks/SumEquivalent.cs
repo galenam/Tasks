@@ -11,7 +11,28 @@ public static class SumEquivalent
 {
     public static int SumWithMinimumDifference(IReadOnlyList<int> source)
     {
-        return 0;
+        if (source.Count < 3)
+        {
+            return -1;
+        }
+
+        var sum = source.Sum();
+        var leftSum = source[0];
+        var rightSum = sum - source[0] - source[1];
+        var bestIndex = 1;
+        var diff = Math.Abs(leftSum - rightSum);
+        for (int i = 2; i < source.Count - 1; i++)
+        {
+            leftSum += source[i - 1];
+            rightSum -= source[i];
+            if (Math.Abs(leftSum - rightSum) < diff)
+            {
+                bestIndex = i;
+                diff = Math.Abs(leftSum - rightSum);
+            }
+        }
+
+        return bestIndex;
     }
 
 }

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using Tasks.AppCode;
 
 namespace Tasks
@@ -13,22 +14,24 @@ namespace Tasks
                 switch (task)
                 {
                     case 1:
-                        Console.WriteLine("Enter the array for squares. Blank is a delimiter");
-                        var arrayString = Console.ReadLine();
-                        try
+                        var array = GetListFromConsole();
+                        if (array.Count == 0)
                         {
-                            var split = arrayString?.Split(' ');
-                            if (split != null)
-                            {
-                                var array = split
-                                    .Select(int.Parse)
-                                    .ToList();
-                                PrintList(SortedSquares.GetSortedSquares(array));
-                            }
+                            return;
                         }
-                        finally{}
+
+                        PrintList(SortedSquares.GetSortedSquares(array));
                         break;
-                        default:
+                    case 2:
+                        var arrayEquivalent = GetListFromConsole();
+                        if (arrayEquivalent.Count == 0)
+                        {
+                            return;
+                        }
+
+                        Console.WriteLine($"index = {SumEquivalent.SumWithMinimumDifference(arrayEquivalent)}");
+                        break;
+                    default:
                         Console.WriteLine("Enter the DNA string");
                         var source = Console.ReadLine();
                         Console.WriteLine(DNACoding.Coding(source));
@@ -45,6 +48,26 @@ break;
                 Console.Write($"{l} ");
             }
             Console.WriteLine();
+        }
+        
+        static IReadOnlyList<int> GetListFromConsole()
+        {
+            Console.WriteLine("Enter the array for squares. Blank is a delimiter");
+            var arrayString = Console.ReadLine();
+            try
+            {
+                var split = arrayString?.Split(' ');
+                if (split != null)
+                {
+                    var array = split
+                        .Select(int.Parse)
+                        .ToList();
+                    return array;
+                }
+            }
+            finally{}
+
+            return ImmutableList<int>.Empty;
         }
     }
 }

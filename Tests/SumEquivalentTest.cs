@@ -31,7 +31,7 @@ public sealed class SumEquivalentTest
             new object[]
             {
                 new object[] { 3, 2, 1, 0, 1, 2, 3 },
-                4
+                3
             },
             new object[]
             {
@@ -51,7 +51,7 @@ public sealed class SumEquivalentTest
             new object[]
             {
                 new object[] { 7, 2, 3, 4, 5, 5 },
-                4
+                3
             },
             new object[]
             {
