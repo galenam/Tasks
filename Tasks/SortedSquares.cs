@@ -36,12 +36,16 @@ public static class SortedSquares
         {
             if (Math.Abs(nums[indexLeft]) < Math.Abs(nums[indexRight]))
             {
-                result[indexResult--] = nums[indexRight] * nums[indexRight--];
+                result[indexResult] = nums[indexRight] * nums[indexRight];
+                indexRight--;
             }
             else
             {
-                result[indexResult--] = nums[indexLeft] * nums[indexLeft++];
+                result[indexResult] = nums[indexLeft] * nums[indexLeft];
+                indexLeft++;
             }
+
+            indexResult--;
         }
 
         return result;
