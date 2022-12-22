@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Tests")]
-namespace Tasks;
+namespace Tasks.Tasks;
 
 /*
  * Дан отсортированный массив целых чисел. Нужно вернуть отсортированный массив квадратов этих чисел.

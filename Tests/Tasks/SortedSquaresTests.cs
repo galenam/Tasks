@@ -1,7 +1,7 @@
-using Tasks;
+using Tasks.Tasks;
 using Xunit;
 
-namespace Tests;
+namespace Tests.Tasks;
 
 public sealed class SortedSquaresTests
 {

@@ -1,8 +1,7 @@
-using System.Runtime.InteropServices;
-using Tasks.AppCode;
+using Tasks.Tasks;
 using Xunit;
 
-namespace Tests;
+namespace Tests.Tasks;
 
 public class DNACodingTests
 {
