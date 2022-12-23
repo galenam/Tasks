@@ -1,5 +1,6 @@
 namespace Tasks.LeetCode;
 
+
 public static class PalindromeNumber
 {
     /*
