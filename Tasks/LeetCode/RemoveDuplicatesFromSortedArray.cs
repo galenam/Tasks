@@ -20,7 +20,6 @@ public static class RemoveDuplicatesFromSortedArray
         }
 
         var index = 1;
-        var isUp = false;
         for (int i = 1; i < nums.Length; i++)
         {
             if (nums[i] > nums[i - 1])
